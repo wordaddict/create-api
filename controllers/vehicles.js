@@ -1,10 +1,9 @@
 const rp = require('request-promise');
 
-const config = require('../config/config.js');
 const getvehicleDescription = require('../services/vehicles.js')
 
-const getVehicleData = (model_year, menufacturer, model) => {
-    return getvehicleDescription(model_year, menufacturer, model)
+const getVehicleData = (modelYear, manufacturer, model) => {
+    return getvehicleDescription(modelYear, manufacturer, model)
         .then((data) => {
             const { Results, Count } = data;
             if ( Results.length === 0) {
