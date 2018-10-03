@@ -22,8 +22,8 @@ router.get('/vehicles/:modelYear/:manufacturer/:model', (req, res) => {
     if (withRating) {
         return getCrashRatingAndData(modelYear, manufacturer, model)
             .then((data) => {
-                console.log('data from crash', data);
-                res.send('On it');
+                const resp = new Response(HTTPStatus.OK, 'Data gotten successfully', res, false, data);
+                return resp.res_message();
             })
             .catch((err) => {
                 console.log('err from crash', err);

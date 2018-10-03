@@ -1,13 +1,16 @@
-const getvehicleDescription = require('../services/crash_rating');
+const rp = require('request-promise');
 
-const getCrashRatingAndData = (modelYear, manufacturer, model) => {
+const getCrashRating = require('../services/crash_rating');
+const getvehicleDescription = require('../services/vehicles.js');
+
+function getCrashRatingAndData (modelYear, manufacturer, model) {
     return getvehicleDescription(modelYear, manufacturer, model)
         .then((data) => {
-            const { Results } = data;
-            return getDataAndLoop(Results)
+            const { Results, Count } = data;
+            return getDataAndLoop(Results, Count);
         });
 }
-async function getDataAndLoop(Results) {
+async function getDataAndLoop(Results, Count) {
     let resultArray = [];
     let vehicleId = '';
     let dataObj = {};
@@ -26,7 +29,10 @@ async function getDataAndLoop(Results) {
             })
     }
     console.log('data gotten crash rating service', resultArray);
-    return resultArray;
+    return {
+        Results: resultArray,
+        Count
+    };
 }
 
 module.exports = getCrashRatingAndData;
