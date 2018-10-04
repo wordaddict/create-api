@@ -1,6 +1,6 @@
-# Use node v10.8.0
+# Use node v8.12.0
 
-FROM node:10.8.0
+FROM node:8.12.0
 
 # Copy source code
 COPY . /conference-API
