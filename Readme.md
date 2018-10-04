@@ -7,20 +7,22 @@ Node version - v8.12.0 (LTS)
 
 NPM version - v6.4.1
 
-install all packages with
+#install all packages with
 npm install
 
-start the application with
-npm run start
+#start the application with
+npm start
 
-start the test with
-npm run test
+#start the test with
+npm test
 
-Run lint with (Linting was done using Airbnb standard)
+#Run lint with (Linting was done using Airbnb standard)
 npm run lint
 
 1) The first endpoint is a GET method-
-Endpoint - /vehicles/:modelYear/:manufacturer/:model - Gets vehicle data
+#Endpoint
+/vehicles/:modelYear/:manufacturer/:model - Gets vehicle data
+
 with - modelYear
      - manufacturer
      - model
@@ -31,10 +33,12 @@ Response format
 application/json
 
 2) With an addition query parameter withRating=true
-Endpoint - /vehicles/:modelYear/:manufacturer/:model?withRating=true
+#Endpoint
+/vehicles/:modelYear/:manufacturer/:model?withRating=true
 The Crash rating is added in the Response
 
 3) second endpoint posts the data as json payload and gets back vehicle data
+#Endpoint
 /vehicles
 
 with a sample payload
