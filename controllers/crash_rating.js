@@ -11,6 +11,12 @@ function getCrashRatingAndData (modelYear, manufacturer, model) {
         });
 }
 async function getDataAndLoop(Results, Count) {
+    if ( Results.length === 0) {
+        return {
+            Results: [],
+            Count: 0
+        };
+    }
     let resultArray = [];
     let vehicleId = '';
     let dataObj = {};
@@ -28,7 +34,6 @@ async function getDataAndLoop(Results, Count) {
                 resultArray.push(dataObj);
             })
     }
-    console.log('data gotten crash rating service', resultArray);
     return {
         Results: resultArray,
         Count
