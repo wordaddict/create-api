@@ -20,7 +20,6 @@ const getVehicleData = (modelYear, manufacturer, model) => {
                 }
                 resultsArray.push(data);
             }
-            console.log('data gotten from the service', resultsArray);
             return {
                 Results: resultsArray,
                 Count

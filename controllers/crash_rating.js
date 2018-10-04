@@ -22,7 +22,6 @@ async function getDataAndLoop(Results, Count) {
     let dataObj = {};
     for (let i = 0; i < Results.length; i++) {
         vehicleId = Results[i].VehicleId
-        console.log('vehicleId', vehicleId);
         await getCrashRating(vehicleId)
             .then((res) => {
                 const rating = res.Results[0].OverallRating;

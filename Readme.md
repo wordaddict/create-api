@@ -2,26 +2,35 @@ This is the Vehicle data and crash rating API
 
 Author: Adeyinka Micheal
 
-Environments
+**Environments**
 Node version - v8.12.0 (LTS)
 
 NPM version - v6.4.1
 
-#install all packages with
+**Install all dependencies**
+```
 npm install
-
-#start the application with
+```
+**Start the application**
+```
 npm start
+```
 
-#start the test with
+**Run all tests**
+```
 npm test
+```
 
-#Run lint with (Linting was done using Airbnb standard)
+**Run linting**
+```
 npm run lint
+```
 
 1) The first endpoint is a GET method-
-#Endpoint
+**Endpoint**
+``
 /vehicles/:modelYear/:manufacturer/:model - Gets vehicle data
+``
 
 with - modelYear
      - manufacturer
@@ -33,15 +42,20 @@ Response format
 application/json
 
 2) With an addition query parameter withRating=true
-#Endpoint
+**Endpoint**
+``
 /vehicles/:modelYear/:manufacturer/:model?withRating=true
+``
+
 The Crash rating is added in the Response
 
 3) second endpoint posts the data as json payload and gets back vehicle data
-#Endpoint
+**Endpoint**
+``
 /vehicles
+``
 
-with a sample payload
+##with a sample payload
 {
     "modelYear": 2015,
     "manufacturer": "Audi",
@@ -54,8 +68,12 @@ Returns the same response as 1
 
  Just as provided in sample.env
 
+``
 NHTSA_URL=''
+``
+``
 NHTSA_CRASH_RATING_URL=''
+``
 
 where NHTSA_URL is an endpoint used to get the Vehicle Id and Description
 And NHTSA_CRASH_RATING_URL is the endpoint that takes VehicleId and gets Crash rating
