@@ -29,12 +29,14 @@ npm run lint
 1) The first endpoint is a GET method-
 **Endpoint**
 ``
-/vehicles/:modelYear/:manufacturer/:model - Gets vehicle data
+/vehicles/:modelYear/:manufacturer/:model
 ``
-
-with - modelYear
+- Gets vehicle data with
+``
+     - modelYear
      - manufacturer
      - model
+``
 
 As query parameters
 Response format
@@ -55,12 +57,14 @@ The Crash rating is added in the Response
 /vehicles
 ``
 
-##with a sample payload
+#with a sample payload#
+``
 {
     "modelYear": 2015,
     "manufacturer": "Audi",
     "model": "A3"
 }
+``
 
 Returns the same response as 1
 
