@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 const config = {
     url: {
-        nhtsa: 'https://one.nhtsa.gov/webapi/api/SafetyRatings/modelyear/',
-        crash_rating_url: 'https://one.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/'
+        nhtsa: process.env.NHTSA_URL,
+        crash_rating_url: process.env.NHTSA_CRASH_RATING_URL
     }
 }
 

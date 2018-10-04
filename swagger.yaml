@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  description: This API gets information about crash test ratings for Vehicles
+  version: 1.0.0
+  title: Crash test rating
+  contact:
+    email: madeyinka6@gmail.com
+
+  license:
+    name:  Adeyinka Micheal
+
+
+paths:
+  /vehicles/:modelYear/:manufacturer/:model:
+    get:
+      summary: vehicle details
+      tags: 
+        - vehicle details endpoints
+      description: vehicle details endpoints that returns vehicle description and ID and also returns rating when the parameter is set to true
+      produces:
+      - application/json
+      parameters:
+        - in: path
+          name: modelYear
+          type: string
+          required: true
+        - in: path
+          name: manufacturer
+          type: string
+          required: true
+        - in: path
+          name: model
+          type: string
+          required: true
+      responses:
+        200:
+
+paths:
+  /vehicles:
+    post:
+      summary: vehicle details
+      tags: 
+        - vehicle details endpoints
+      description: vehicle details endpoints that returns vehicle description and ID
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - in: body
+          name: modelYear
+          type: string
+          required: true
+        - in: body
+          name: manufacturer
+          type: string
+          required: true
+        - in: body
+          name: model
+          type: string
+          required: true
+      responses:
+        200:
+          
+# ------------------------------------------- Defintions ------------------------------------------------------
+definitions:
+
+  vehicle:
+    type: object
+    required:
+    - modelYear
+    - manufacturer
+    - model
+    properties:
+      modelYear:
+        type: string
+      manufacturer:
+        type: string
+      model:
+        type: string
+
+  
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+schemes:
+ - https
